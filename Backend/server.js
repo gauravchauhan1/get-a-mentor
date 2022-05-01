@@ -1,43 +1,29 @@
-const express = require('express');
-const app = express()
-const bcrypt = require('bcrypt')
+import express from "express";
+import mongooseConnection from "./DB/index.js";
+import router from "./Routes/route.js";
+import dotnet from 'dotenv';
 
-const PORT = 3000;
-
-app.use(express.urlencoded({ extended: false}))
+const app = express();
 app.use(express.json());
-
-app.get('/', (req, res)=> {
-    res.send('hello');
-})
+dotnet.config();
 
 
-//Login
-app.get('/login', (req, res) =>{
-    res.send('Login Window')
-})
+const port = process.env.PORT || 5000;
 
-app.post('/login', (req, res) =>{
-    res.send('Login Window')
-})
+app.use("/", router);
 
+app.all("*", (req, res) => {
+  res.send("Invalid Request. Please contact Administrator.");
+});
 
-//Register
-app.post('/register', async (req, res) =>{
-    try{
-        const hashPassword = bcrypt.hash(req.body.password, 10);
-        users.push({
-            id: Date.now.toString(),
-            name: req.body.name,
-            email: req.body.email,
-            password: hashedPassword
-        });
-        res.redirect('/login');
-    }catch{
-        res.redirect('/register');
+const initializeServer = async () => {
+  await mongooseConnection();
+  app.listen(port, (err) => {
+    console.log(`http://localhost:${port}`);
+    if (err) {
+      console.log(`Error Starting Application Server`);
     }
-    console.log(users)
+  });
+};
 
-})
-
-app.listen(PORT, () => console.log(`Express server currently running on port ${PORT}`));
+initializeServer();
