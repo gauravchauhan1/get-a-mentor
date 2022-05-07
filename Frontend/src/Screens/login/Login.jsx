@@ -1,6 +1,12 @@
 import React, { useState } from "react";
-import "../../Styles/registrationmentee.css";
+import { useForm } from "react-hook-form";
 const Login = () => {
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
+
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -11,42 +17,71 @@ const Login = () => {
     const value = e.target.value;
     setUser({ ...user, [name]: value });
   };
+  console.log(errors);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const onSubmit = async (e) => {
+    console.log(e);
   };
   return (
-    <div className="mainContainer">
-      <div className="header">
-        Login
-        <hr />
-      </div>
-      <div className="body">
-        <form onSubmit={handleSubmit}>
-          <div className="row">
-            <label>Email</label>
-            <input
-              type="text"
-              name="email"
-              value={user.email}
-              placeholder="Email"
-              onChange={handleChange}
-            />
+    <div>
+      <div className="container">
+        <div className="row">
+          <div className="col-5 content-container">
+            <div class="content-text">
+              <span>Login here!</span>
+            </div>
           </div>
-          <div className="row">
-            <label>Password</label>
-            <input
-              type="text"
-              name="password"
-              value={user.password}
-              placeholder="Password"
-              onChange={handleChange}
-            />
+          <div className="col-7 signin-container">
+            <h1>
+              Log In<span class="dot">.</span>
+            </h1>
+            <form className="mx-1 mx-md-4" onSubmit={handleSubmit(onSubmit)}>
+              <div className="d-flex flex-row align-items-center mb-4">
+                <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                <div className="form-outline flex-fill mb-0">
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    className="form-control"
+                    value={user.email}
+                    {...register("email", {
+                      required: true,
+                      onChange: handleChange,
+                    })}
+                  />
+                  {errors.email?.type === "required" && (
+                    <p style={{ color: "red" }}>Email is a required field</p>
+                  )}
+                </div>
+              </div>
+
+              <div className="d-flex flex-row align-items-center mb-4">
+                <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
+                <div className="form-outline flex-fill mb-0">
+                  <input
+                    type="password"
+                    name="password"
+                    className="form-control"
+                    placeholder="Password"
+                    value={user.password}
+                    {...register("password", {
+                      required: true,
+                      onChange: handleChange,
+                    })}
+                  />
+                  {errors.password?.type === "required" && (
+                    <p style={{ color: "red" }}>Password is a required field</p>
+                  )}
+                </div>
+              </div>
+
+              <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                <input type="submit" className="btn btn-primary btn-lg" />
+              </div>
+            </form>
           </div>
-          <div className="row">
-            <button type="submit">Submit</button>
-          </div>
-        </form>
+        </div>
       </div>
     </div>
   );

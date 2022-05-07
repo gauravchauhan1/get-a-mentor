@@ -1,0 +1,82 @@
+
+/* .container{
+    display:flex;
+    margin:1rem 1rem;
+    padding:0;
+    height:700px;
+    width:100%;
+    background-color: red;
+    flex-direction: row;
+     
+}
+.sign-in-container{
+    width:60%;
+    height:100%;
+    background-color: blue;
+}
+
+.content-container{
+    width:40%;
+    height:100%;
+    background-color: pink;
+    
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); 
+.container{
+    font-family: "Poppins", sans-serif;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin-top:1.5rem
+}
+
+.signin-container{
+    height:auto;
+}
+.content-container{
+    background: #eeeeee75;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 8rem;
+}
+.dot{
+    color:blue;
+    
+}
+.content-text{
+    font-size:3rem;
+    font-weight: 400;
+}
+.content-text span{
+    font-size:3.5rem;
+    font-weight:bold;
+
+}
+h1{
+    margin:1.5rem;
+    font-weight: bold;
+}
+.btn .btn-primary{
+    
+    border: none;
+    background: #2196f3;
+    color: #fff;
+    border-radius: 1rem;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: inherit;
+    align-self: flex-end;
+  width: 100%;
+  margin-top: 2rem;
+  box-shadow: 0 5px 5px #00000020;
+  }
+
+
+  @media only screen and (max-width: 1200px) {
+    .content-container {
+      display: none;
+    }
+  }
+  

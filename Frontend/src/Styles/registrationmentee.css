@@ -1,8 +1,6 @@
-
+/* 
 .mainContainer{
-    /* max-width: 500px;
-    min-width: 300px;
-    max-height: 700px; */
+
     width: 500px;
     height: auto;
     margin: 100px auto;
@@ -70,4 +68,4 @@
     cursor: pointer;
     transition: opacity 0.25s ease-out;
     margin-bottom: 2rem ;
-}
+} */
