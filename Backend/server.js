@@ -13,9 +13,15 @@ dotnet.config();
 const port = process.env.PORT || 5000;
 
 app.use("/", router);
+app.use(cors());
+app.options('*', cors());
+app.use(bodyParser.urlencoded({ extended : true }));
+app.use( bodyParser.json());
+app.use(express.json());
+app.use(errorHandler);
 
 app.all("*", (req, res) => {
-  res.send("Invalid Request. Please contact Administrator.");
+  res.send(`cannot find the route ${req.originalUrl} in the server`, 404);
 });
 
 const initializeServer = async () => {
@@ -31,39 +37,4 @@ const initializeServer = async () => {
 initializeServer();
 
 
-// CONST EXPRESS = REQUIRE('EXPRESS')
-// CONST CORS = REQUIRE('CORS')
-// CONST MONGOOSE = REQUIRE('MONGOOSE')
-// CONST APP = EXPRESS()
-// CONST MENTEE = REQUIRE('./MODELS/MENTEE.MODEL')
-// APP.USE(CORS())
-// APP.USE(EXPRESS.JSON())
-// MONGOOSE.CONNECT('MONGODB://LOCALHOST:27017/GET-A-MENTOR')
 
-// APP.GET('/', (REQ, RES) => {
-//   RES.SEND('HELLO WORLD!')
-// })
-
-// APP.POST('/API/REGISTER-MENTEE', ASYNC (REQ, RES) => {
-//   CONSOLE.LOG(REQ.BODY)
-//   TRY{
-//     CONST MENTEE = AWAIT NEW MENTEE({
-//       FIRSTNAME: REQ.BODY.FIRSTNAME,
-//       LASTNAME: REQ.BODY.LASTNAME,
-//       EMAIL: REQ.BODY.EMAIL,
-//       PASSWORD: REQ.BODY.PASSWORD,
-//       PHONE: REQ.BODY.PHONENUMBER
-//     })
-//     // MENTEE.SAVE()
-//     RES.JSON({STATUS:'OK'})
-//   }
-//   CATCH(ERR){
-//     CONSOLE.LOG(ERR)
-//     RES.JSON({STATUS:'SOMETHING IS WRONG'})
-//   }
-//   RES.JSON({STATUS: 'OK'})
-// })
-
-// APP.LISTEN(1337, () => {
-//   CONSOLE.LOG('SERVER STARTED AT PORT 1337')
-// })

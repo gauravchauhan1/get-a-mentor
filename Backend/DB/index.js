@@ -3,6 +3,7 @@ import express from 'express';
 import dotnet from 'dotenv';
 
 dotnet.config();
+const uri = process.env.uri;
 //const uri = 'mongodb://localhost:27017/get-a-mentor';
 const app = express();
 //password : GwMAvz439VZHeEVx
