@@ -1,16 +1,18 @@
-import Courses from "../Models/Courses";
-import Mentee from "../Models/Mentee";
-import Mentor from "../Models/Mentor";
-import catchAsync from "../utils/catchAsync";
-import AppError from "../utils/appError";
+import Courses from "../Models/Courses.js";
+import Mentee from "../Models/Mentee.js";
+import Mentor from "../Models/Mentor.js";
+import catchAsync from "../utils/catchAsync.js";
+import AppError from "../utils/appError.js";
 import jwt from 'jsonwebtoken';
-import createToken from '../utils/createToken';
-import populate from '/Models/Courses';
-import stripe from stripe;
+import createToken from '../utils/createToken.js';
+import Populate from '/Models/Courses.js';
+import stripe from 'stripe';
 
 const verify = jwt.verify;
+const populate=Populate;
 
-const populate=populate;
+const Stripe = stripe;
+Stripe('pk_test_51Kx8yQSDHXvbXGt6F13O8DSRoMRGh3RIRowSAWZWQufnbROege73n3svBo4nakJmkmwjrZc0UIumLpAEvNEZZbnY00WEAcLtWL')
 
 const menteeApiController = {
     signUp : catchAsync( async (req, res, next) => {

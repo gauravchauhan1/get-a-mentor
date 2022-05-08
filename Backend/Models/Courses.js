@@ -16,7 +16,7 @@ const coursesSchema = new Schema({
     },
     category : {
         type : String,
-        enum : ['Cooking', 'Coding', 'finance'],
+        enum : ['Cooking', 'Coding', 'Finance'],
         required : true
     },
     price : {
@@ -28,9 +28,9 @@ const coursesSchema = new Schema({
         type : Schema.Types.ObjectId,
         ref : 'videos'
     }],
-    uploader : {
+    mentor : {
         type : Schema.Types.ObjectId,
-        ref : 'uploader'
+        ref : 'mentor'
     },
     revenue : {
         type : Number,
