@@ -1,8 +1,8 @@
 import jwt from 'jsonwebtoken';
-import mentor from '../Models/Mentor';
-import mentee from '../Models/Mentee';
-import catchAsync from '../utils/catchAsync';
-import AppError from '../utils/appError';
+import mentor from '../Models/Mentor.js';
+import mentee from '../Models/Mentee.js';
+import catchAsync from '../utils/catchAsync.js';
+import AppError from '../utils/appError.js';
 import dotnet from 'dotenv';
 
 dotnet.config();
