@@ -3,7 +3,7 @@ import Authentication from '../Middleware/Authentication.js';
 import mentorApiController from '../Controller/mentorApiController.js';
 import upload from 'multer';
 
-const router = express.Router;
+const router = express.Router();
 const signUp = mentorApiController.signUp;
 const signIn = mentorApiController.signIn;
 const signOut = mentorApiController.signOut;

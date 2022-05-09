@@ -1,8 +1,8 @@
 import express from 'express';
-import menteeApiController from '../Controller/menteeApiController';
-import Authentication from '../Middleware/Authentication';
+import menteeApiController from '../Controller/menteeApiController.js';
+import Authentication from '../Middleware/Authentication.js';
 
-const router = express.Router;
+const router = express.Router();
 const signIn = menteeApiController.signIn;
 const signOut = menteeApiController.signOut; 
 const signUp = menteeApiController.signUp;

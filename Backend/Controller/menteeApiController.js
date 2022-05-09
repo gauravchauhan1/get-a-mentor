@@ -5,7 +5,7 @@ import catchAsync from "../utils/catchAsync.js";
 import AppError from "../utils/appError.js";
 import jwt from 'jsonwebtoken';
 import createToken from '../utils/createToken.js';
-import Populate from '/Models/Courses.js';
+import Populate from '../Models/Courses.js';
 import stripe from 'stripe';
 
 const verify = jwt.verify;

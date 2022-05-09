@@ -1,8 +1,7 @@
-import e from "express";
-import AppError from "../utils/appError";
+import AppError from "../utils/appError.js";
 
 const handleCastError = err => {
-  const message = `Inavlid ${err.path} : ${err.value}`;
+  const message = `Invalid ${err.path} : ${err.value}`;
   return new AppError(message, 400);
 };
 

@@ -1,9 +1,12 @@
 import express from "express";
-import menteeApiController from "./Controller/menteeApiController.js";
-import MentorApiController from "./Controller/mentorApiController.js";
+import menteeApiRoutes from "./Routes/menteeApiRoutes.js";
+import MentorApiRoutes from "./Routes/mentorApiRoutes.js";
 import dotnet from "dotenv";
 import cors from "cors";
 import AppError from "./utils/appError.js";
+import bodyParser from 'body-parser';
+import errorHandler from './Handler/errorHandler.js'
+
 
 const app = express();
 app.use(cors());
@@ -12,8 +15,8 @@ dotnet.config();
 
 const port = process.env.PORT || 5000;
 
-app.use(menteeApiController);
-app.use(MentorApiController);
+app.use(menteeApiRoutes);
+app.use(MentorApiRoutes);
 app.use(cors());
 app.options("*", cors());
 app.use(bodyParser.urlencoded({ extended: true }));

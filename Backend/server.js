@@ -11,7 +11,7 @@ const initializeServer = async () => {
   });
 };
 
-initializeServer.server();
+initializeServer;
 
 process.on("uncaughtException", err => {
   console.log("UNCAUGHT EXCEPTION!! SHUTTING DOWN...");
