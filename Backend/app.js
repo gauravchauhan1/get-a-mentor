@@ -1,12 +1,13 @@
 import express from "express";
 import menteeApiRoutes from "./Routes/menteeApiRoutes.js";
-import MentorApiRoutes from "./Routes/mentorApiRoutes.js";
+import mentorApiRoutes from "./Routes/mentorApiRoutes.js";
 import dotnet from "dotenv";
 import cors from "cors";
 import AppError from "./utils/appError.js";
 import bodyParser from 'body-parser';
-import errorHandler from './Handler/errorHandler.js'
-
+import errorHandler from './Handler/errorHandler.js';
+import path from 'path';
+import mongooseConnection from "./DB/index.js";
 
 const app = express();
 app.use(cors());
@@ -15,8 +16,10 @@ dotnet.config();
 
 const port = process.env.PORT || 5000;
 
+
+mongooseConnection();
 app.use(menteeApiRoutes);
-app.use(MentorApiRoutes);
+app.use(mentorApiRoutes);
 app.use(cors());
 app.options("*", cors());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -30,10 +33,10 @@ app.all("*", (req, _, next) => {
   );
 });
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.resolve(__dirname, "client", "build")));
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static(path.resolve(__dirname, 'client', 'build')));
+  app.get('*', (req, res)=>{
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
 
