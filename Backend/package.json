@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "devStart": "nodemon server.js",
-    "debug": "ndb server.js"
+    "debug": "ndb server.js",
+    "pretty": "prettier --write \"./**/*.{js,jsx,json}\""
   },
   "type": "module",
   "keywords": [],
