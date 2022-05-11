@@ -1,17 +1,9 @@
 import mongooseConnection from "./DB/index.js";
 import app from "./app.js";
+import dotnet from "dotenv";
 
-const initializeServer = async () => {
-  await mongooseConnection();
-  const server = app.listen(port, err => {
-    console.log(`http://localhost:${port}`);
-    if (err) {
-      console.log(`Error Starting Application Server due to: ${err}`);
-    }
-  });
-};
-
-initializeServer;
+dotnet.config();
+const PORT = process.env.PORT || 5000;
 
 process.on("uncaughtException", err => {
   console.log("UNCAUGHT EXCEPTION!! SHUTTING DOWN...");
@@ -19,10 +11,16 @@ process.on("uncaughtException", err => {
   process.exit(1);
 });
 
+const server = app.listen(PORT, () => {
+  console.log(`server running on port ${PORT}`);
+});
+
 process.on("unhandledRejection", err => {
   console.log("UNHANDLED REJECTION!! SHUTTING DOWN...");
   console.log(err.name, err.message);
-  initializeServer.server.close(() => {
+  server.close(() => {
     process.exit(1);
   });
 });
+
+mongooseConnection();
