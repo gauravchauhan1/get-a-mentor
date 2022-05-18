@@ -1,18 +1,39 @@
+
 {
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js"
+    "devStart": "nodemon server.js",
+    "debug": "ndb server.js",
+    "pretty": "prettier --write \"./**/*.{js,jsx,json}\""
   },
+  "type": "module",
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cloudinary": "^1.29.1",
     "cors": "^2.8.5",
+    "datauri": "^4.1.0",
     "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.3.2",
-    "nodemon": "^2.0.16"
+    "multer": "^1.4.4",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.0",
+    "eslint": "^6.8.0",
+    "ndb": "^1.1.5",
+    "nodemon": "^2.0.15",
+    "prettier": "^1.9.1",
+    "prettier-eslint": "^14.0.2",
+    "stripe": "^8.222.0",
+    "validator": "^13.7.0"
   }
 }
+
