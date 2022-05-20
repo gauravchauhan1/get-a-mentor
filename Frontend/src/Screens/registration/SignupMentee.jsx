@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useAuth } from "../../contexts/AuthContext";
 import "./signup-mentee.css";
 const SignupMentee = () => {
+  const { signup } = useAuth();
+  const [confirmPassError, setConfirmPassError] = useState(false);
+  const [loading, setLoading] = useState(false);
   const {
     register,
     formState: { errors },
@@ -21,7 +25,18 @@ const SignupMentee = () => {
   };
 
   const onSubmit = async (e) => {
-    console.log(e);
+    if (e.password !== e.cPassword) {
+      setConfirmPassError(true);
+    } else {
+      try {
+        setConfirmPassError(false);
+        setLoading(true);
+        await signup(user.email, user.password);
+      } catch {
+        alert("failed to signup");
+      }
+      setLoading(false);
+    }
   };
 
   return (
@@ -30,7 +45,7 @@ const SignupMentee = () => {
         <div className="row">
           <div className="col-7 signin-container">
             <h1>
-              Sign Up<span class="dot">.</span>
+              Sign Up<span className="dot">.</span>
             </h1>
             <form className="mx-1 mx-md-4" onSubmit={handleSubmit(onSubmit)}>
               <div className="d-flex flex-row align-items-center mb-4">
@@ -107,8 +122,8 @@ const SignupMentee = () => {
                       onChange: handleChange,
                     })}
                   />
-                  {errors.password?.type === "required" && (
-                    <p style={{ color: "red" }}>Password is a required field</p>
+                  {confirmPassError && (
+                    <p style={{ color: "red" }}>Password do not match</p>
                   )}
                 </div>
               </div>
@@ -120,19 +135,23 @@ const SignupMentee = () => {
                   value=""
                   id="form2Example3c"
                 />
-                <label className="form-check-label" for="form2Example3">
+                <label className="form-check-label" htmlFor="form2Example3">
                   I agree all statements in Terms of service
                 </label>
               </div>
 
               <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                <input type="submit" className="btn btn-primary btn-lg" />
+                <input
+                  disabled={loading}
+                  type="submit"
+                  className="btn btn-primary btn-lg"
+                />
               </div>
             </form>
           </div>
 
           <div className="col-5 content-container">
-            <div class="content-text">
+            <div className="content-text">
               Welcome to <span>Mentor Buddy!</span>
             </div>
           </div>

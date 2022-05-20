@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-
+import { useAuth } from "../../contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
+  const { navigate } = useNavigate();
+  const { signin, currentUser } = useAuth();
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
-
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -18,23 +22,33 @@ const Login = () => {
     const value = e.target.value;
     setUser({ ...user, [name]: value });
   };
-  console.log(errors);
 
   const onSubmit = async (e) => {
-    console.log(e);
+    console.log(currentUser);
+    try {
+      setError("");
+      setLoading(true);
+      await signin(user.email, user.password);
+      navigate("/");
+      console.log(currentUser);
+    } catch {
+      setError("Failed to signin");
+    }
+    setLoading(false);
   };
+
   return (
     <div>
       <div className="container">
         <div className="row">
           <div className="col-5 content-container">
-            <div class="content-text">
-              <span>Login here!</span>
+            <div className="content-text">
+              <span>Login here! {currentUser}</span>
             </div>
           </div>
           <div className="col-7 signin-container">
             <h1>
-              Log In<span class="dot">.</span>
+              Sign In<span className="dot">.</span>
             </h1>
             <form className="mx-1 mx-md-4" onSubmit={handleSubmit(onSubmit)}>
               <div className="d-flex flex-row align-items-center mb-4">
@@ -76,9 +90,13 @@ const Login = () => {
                   )}
                 </div>
               </div>
-
+              {error && <p style={{ color: "red" }}>{error}</p>}
               <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                <input type="submit" className="btn btn-primary btn-lg" />
+                <input
+                  disabled={loading}
+                  type="submit"
+                  className="btn btn-primary btn-lg"
+                />
               </div>
             </form>
           </div>
