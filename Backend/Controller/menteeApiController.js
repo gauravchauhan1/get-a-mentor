@@ -5,20 +5,21 @@ import catchAsync from "../utils/catchAsync.js";
 import AppError from "../utils/appError.js";
 import jwt from "jsonwebtoken";
 import createToken from "../utils/createToken.js";
-import Populate from "../Models/Courses.js";
+import populate from "../Models/Courses.js";
 import stripe from "stripe";
 
 const verify = jwt.verify;
-const populate = Populate;
+const privatekey = process.env.privatekey;
 
 const Stripe = stripe;
 Stripe(
   "pk_test_51Kx8yQSDHXvbXGt6F13O8DSRoMRGh3RIRowSAWZWQufnbROege73n3svBo4nakJmkmwjrZc0UIumLpAEvNEZZbnY00WEAcLtWL"
 );
 
-const menteeApiController = {
+export default {
   signUp: catchAsync(async (req, res, next) => {
     const newMentor = await Mentee.create({ ...req.body });
+    console.log(newMentor);
     createToken(newMentor);
     await newMentor.save();
     res.status(200).json({
@@ -145,5 +146,3 @@ const menteeApiController = {
     }
   })
 };
-
-export default menteeApiController;

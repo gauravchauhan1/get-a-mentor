@@ -1,11 +1,12 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
-import validator from "validator";
+import Validator from "validator";
 
 const Schema = mongoose.Schema;
 const model = mongoose.model;
 const hash = bcrypt.hash;
 const compare = bcrypt.compare;
+const validator = Validator.validator;
 
 const userSchema = new Schema(
   {
@@ -21,7 +22,7 @@ const userSchema = new Schema(
       trim: true,
       unique: true,
       validate: {
-        validator: data => {
+        validator: (data) => {
           return validator.isEmail(data);
         },
         message: props => `${props.value} is not a valid mail id `
@@ -29,7 +30,7 @@ const userSchema = new Schema(
     },
     password: {
       type: String,
-      required: function() {
+      required: function () {
         return !this.isThirdPartyUser;
       },
       trim: true,
@@ -117,7 +118,7 @@ userSchema.statics.findByEmailAndPassword = async (email, password) => {
   }
 };
 
-userSchema.pre("save", async function(next) {
+userSchema.pre("save", async function (next) {
   const user = this;
   try {
     if (user.isModified("password")) {

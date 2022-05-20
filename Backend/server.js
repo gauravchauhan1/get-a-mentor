@@ -12,7 +12,7 @@ process.on("uncaughtException", err => {
 });
 
 const server = app.listen(PORT, () => {
-  console.log(`server running on port ${PORT}`);
+  console.log(`server running on http://localhost:${PORT}`);
 });
 
 process.on("unhandledRejection", err => {

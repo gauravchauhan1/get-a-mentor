@@ -1,11 +1,12 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
-import validator from "validator";
+import Validator from "validator";
 
 const Schema = mongoose.Schema;
 const model = mongoose.model;
 const hash = bcrypt.hash;
 const compare = bcrypt.compare;
+const validator = Validator.validator;
 
 const userSchema = new Schema(
   {
@@ -21,7 +22,7 @@ const userSchema = new Schema(
       trim: true,
       unique: true,
       validate: {
-        validator: data => {
+        validator: (data) => {
           return validator.isEmail(data);
         },
         message: props => `${props.value} is not a valid mail id `
@@ -33,7 +34,7 @@ const userSchema = new Schema(
         return !this.isThirdPartyUser;
       },
       trim: true,
-      minlength: 5
+      minlength: 8
     },
     isThirdPartyUser: {
       type: Boolean,
