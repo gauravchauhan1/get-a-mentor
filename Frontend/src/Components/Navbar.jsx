@@ -22,14 +22,14 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarText">
             <ul className="navbar-nav mx-auto">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <Link to="/" className="nav-link">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Features
-                </a>
+                <Link to="/domain" className="nav-link">
+                  Courses
+                </Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">

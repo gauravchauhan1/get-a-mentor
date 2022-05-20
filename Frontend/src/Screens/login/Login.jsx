@@ -43,7 +43,7 @@ const Login = () => {
         <div className="row">
           <div className="col-5 content-container">
             <div className="content-text">
-              <span>Login here! {currentUser}</span>
+              <span>Login here!</span>
             </div>
           </div>
           <div className="col-7 signin-container">

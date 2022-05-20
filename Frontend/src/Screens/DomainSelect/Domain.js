@@ -15,9 +15,7 @@ const Domain = (props) => {
   }, [log])
   return (
     <div>
-      <button onClick={e => setLog(!log)}>
-        redirect
-      </button>
+      hatja mc
     </div>
   )
 }

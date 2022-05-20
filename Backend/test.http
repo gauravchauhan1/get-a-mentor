@@ -1,5 +1,10 @@
-GET 
+POST http://localhost:7000/mentee/signUp
+content-type: application/json
 
-
-
-POST 
+{
+        "firstName": "goro",
+        "lastName": "soro",
+        "email": "pradhan@abc.com",
+        "password": "12345",
+        "phoneNumber": "9879879879"
+}
