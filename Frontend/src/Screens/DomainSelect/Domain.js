@@ -1,20 +1,26 @@
+import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import Subdomain from '../../Components/Subdomain'
+import '../../Styles/domain.css'
+
 const Domain = (props) => {
-  //   useEffect(() => {
-  //     if (!props.isLoggedIn) {
-  //       props.history.push('/')
-  //     }
-  //   }, [])
-  const navigate = useNavigate()
-  const [log, setLog] = useState(false)
-  useEffect(() => {
-    if (log) {
-      navigate('/')
-    }
-  }, [log])
+
+
+  const domains = [
+    {name: 'IT'},
+    {name: 'Fashion Design'},
+    {name: 'Marketing'},
+    {name: 'Finance'},
+    {name: 'Healthcare'},
+    {name: 'Education'},
+    {name: 'Sports'},
+    {name: 'Entertainment'},
+    {name: 'Food'},
+    {name: 'Travel'}]
   return (
-    <div>
+    <div className='domain-container'>
+      {domains.map((domain, index) => {
+         return < Subdomain domain={domain} key={index} />})}
     </div>
   )
 }

@@ -28,7 +28,7 @@ const Navbar = () => {
               </li>
               <li className="nav-item">
                 <Link to="/domain" className="nav-link">
-                  Courses
+                  Domain Select
                 </Link>
               </li>
               <li className="nav-item">

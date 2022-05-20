@@ -5,6 +5,7 @@ import SignupMentee from './Screens/registration/SignupMentee'
 import Navbar from './Components/Navbar'
 import Domain from './Screens/DomainSelect/Domain'
 import { AuthProvider } from './contexts/AuthContext'
+import Courses from './Screens/Courses/Courses'
 
 function App () {
   return (
@@ -16,6 +17,7 @@ function App () {
           <Route path='/login' element={<Login />}></Route>
           <Route path='/signup-mentee' element={<SignupMentee />}></Route>
           <Route path='/domain' element={<Domain />}></Route>
+          <Route path='/courses' element={<Courses />}></Route>
         </Routes>
       </BrowserRouter>
     </AuthProvider>
