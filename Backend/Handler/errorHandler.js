@@ -1,19 +1,18 @@
 import AppError from "../utils/appError.js";
-import path from 'path';
 
-const handleCastError = err => {
+const handleCastError = (err) => {
   const message = `Invalid ${err.path} : ${err.value}`;
   return new AppError(message, 400);
 };
 
-const handleDuplicateDBError = err => {
+const handleDuplicateDBError = (err) => {
   const value = err.errmsg.match(/(["'])(?:\\.|[^\\])*?\1/);
   const message = `Duplicate field Value : ${value}. please try with another`;
   return new AppError(message, 400);
 };
 
-const handleValidationError = err => {
-  const errors = Object.values(err.errors).map(el => el.message);
+const handleValidationError = (err) => {
+  const errors = Object.values(err.errors).map((el) => el.message);
   const message = `Invalid input data : ${errors.join(". ")}`;
   return new AppError(message, 400);
 };
@@ -36,8 +35,8 @@ const sendErrorProd = (err, res) => {
   } else {
     console.log("ERROR", err);
     res.status(500).json({
-      status: "fail",
-      message: "something went wrong"
+      status: "Fail",
+      message: "Something went wrong"
     });
   }
 };
