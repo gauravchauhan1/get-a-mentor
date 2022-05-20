@@ -1,0 +1,16 @@
+.domain-container{
+    margin: 2rem 7rem;
+    display:flex;
+    flex-direction: row;
+    flex-wrap:wrap
+}
+
+.subdomain-card-container{
+    margin: 1rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;  
+}
+
+.subdomain-card-container .card-header{
+    margin:0rem
+    
+}
