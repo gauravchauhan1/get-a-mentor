@@ -1,0 +1,19 @@
+.main-container{
+     align-items: center;
+        background: linear-gradient(180deg, #fff, #fff 37.5%, #f1f2f4);
+        display: flex;
+        justify-content: space-between;
+        padding: 38px;
+        position: relative;
+}
+        
+.main-container .left-content{
+    margin-right: 120px;
+        width: 742px;
+}
+.main-container .right-content{
+        background: url(/src/assets/images/main-container-image.jpg) no-repeat;
+            height: 482px;
+            width: 360px;
+
+}

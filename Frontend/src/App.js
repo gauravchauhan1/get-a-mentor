@@ -1,12 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import Login from './Screens/login/Login'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Landing from './Screens/Landing page/Landing'
+import SignupMentee from './Screens/registration/SignupMentee'
+import Navbar from './Components/Navbar'
+import { AuthProvider } from './contexts/AuthContext'
 
-function App() {
+function App () {
   return (
-    <div className="App">
-      Get a mentor
-    </div>
-  );
+    <AuthProvider>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Landing />} />
+          <Route path='/login' element={<Login />}></Route>
+          <Route path='/signup-mentee' element={<SignupMentee />}></Route>
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
+
+  )
 }
 
-export default App;
+export default App
