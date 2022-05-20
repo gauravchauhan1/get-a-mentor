@@ -15,7 +15,6 @@ const Domain = (props) => {
   }, [log])
   return (
     <div>
-      hatja mc
     </div>
   )
 }
