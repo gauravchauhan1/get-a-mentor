@@ -30,8 +30,3 @@ export const courseSlice = createSlice({
     }
     )}
 })
-
-// Action creators are generated for each case reducer function
-export const { domainSelect } = courseSlice.actions
-
-export default courseSlice.reducer
