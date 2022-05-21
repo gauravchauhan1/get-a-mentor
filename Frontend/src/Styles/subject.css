@@ -1,0 +1,73 @@
+.subject-container{
+    display:flex;
+    flex-direction:row;
+}
+.subject-container-left{
+    display:flex;
+    flex-direction: column;
+    margin:5rem 5rem;
+    padding-bottom: 2rem;
+    height:auto;
+    width:50%;
+    border-right: 1px solid;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.subject-container-right{
+    margin-top: 5rem;
+        padding-bottom: 2rem;
+        height: auto;
+        width: 30%;
+}
+.subject-left-content{
+    flex-direction: row;
+    padding:2rem;
+}
+.subject-left-header{
+    display:flex;
+    flex-direction: row;
+}
+.subject-right-content{
+    width:40%
+}
+.subject-left-header-image{
+    margin-top:2rem;
+    margin-left:1rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    
+}
+.subject-left-header-text{
+    margin-left:3rem;
+}
+.subject-left-header-text h1{
+    font-weight: 400;
+}
+.subject-left-header-text h4{
+    color:grey;
+    margin-left: 3rem
+}
+.subject-left-header-description{
+    margin-left: 2rem;
+    margin-top:2rem;
+    width: 70%;
+}
+.subject-left-header-description h4{
+    text-decoration: underline;
+    font-weight: 300;
+    color:red
+}
+
+.subject-left-header-description h5{
+    margin-top:1rem;
+    font-weight: 300;
+}
+.common-list{
+    margin-top:1rem;
+    margin-bottom:1rem;
+}
+
+.card{
+    border-radius:10px
+}
+.card-title{
+    margin-bottom:1rem;
+}

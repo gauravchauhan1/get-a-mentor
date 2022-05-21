@@ -9,7 +9,6 @@ const Landing = () => {
   return (
     <div>
       <Main />
-      <Footer />
       <HeroSection />
     </div>
   );
