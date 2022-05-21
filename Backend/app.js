@@ -1,3 +1,4 @@
+
 import express from "express";
 import menteeApiRoutes from "./Routes/menteeApiRoutes.js";
 import mentorApiRoutes from "./Routes/mentorApiRoutes.js";
@@ -7,7 +8,6 @@ import AppError from "./utils/appError.js";
 import bodyParser from "body-parser";
 import errorHandler from "./Handler/errorHandler.js";
 import path from "path";
-import mongooseConnection from "./DB/index.js";
 
 const app = express();
 app.use(cors());

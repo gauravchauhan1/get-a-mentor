@@ -5,7 +5,7 @@ dotnet.config();
 const sign = jwt.sign;
 const privatekey = process.env.privatekey;
 
-const createToken = {
+export default {
   createToken: (user, tokenStatus = "confirm") => {
     if (tokenStatus === "confirm") {
       const token = sign({ id: user._id }, privatekey, { expiresIn: "24h" });
@@ -18,5 +18,3 @@ const createToken = {
     }
   }
 };
-
-export default createToken;

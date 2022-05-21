@@ -24,7 +24,7 @@ const userSchema = new Schema(
         validator: data => {
           return validator.isEmail(data);
         },
-        message: props => `${props.value} is not a valid mail id `
+        message: props => `${props.value} is not a valid email id `
       }
     },
     password: {
@@ -33,7 +33,7 @@ const userSchema = new Schema(
         return !this.isThirdPartyUser;
       },
       trim: true,
-      minlength: 5
+      minlength: 8
     },
     isThirdPartyUser: {
       type: Boolean,
@@ -59,13 +59,13 @@ const userSchema = new Schema(
     },
     DOB: {
       type: Date,
+      required: false,
       validate: {
         validator: data => {
           return data.toLocaleDateString();
         },
         message: props => `${props.value} is not a valid date format`
       },
-      required: false,
       default: new Date().toLocaleDateString()
     },
     gender: {
@@ -131,5 +131,5 @@ userSchema.pre("save", async function(next) {
   }
 });
 
-const User = model("Mentee", userSchema);
-export default User;
+const Mentee = model("Mentee", userSchema);
+export default Mentee;
