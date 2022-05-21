@@ -8,12 +8,7 @@ const app = express();
 
 const mongooseConnection = async () => {
   try {
-    await mongoose.connect(uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useCreateIndex: true,
-      useFindAndModify: false
-    });
+    await mongoose.connect(uri);
     console.log("Connected to Database Successfully.");
   } catch (error) {
     console.log("Error In Connecting to the DB - ", error);

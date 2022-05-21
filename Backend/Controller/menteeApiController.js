@@ -4,28 +4,28 @@ import Mentor from "../Models/Mentor.js";
 import catchAsync from "../utils/catchAsync.js";
 import AppError from "../utils/appError.js";
 import jwt from "jsonwebtoken";
-import createToken from "../utils/createToken.js";
-import Populate from "../Models/Courses.js";
+import CreateToken from "../utils/createToken.js";
+import populate from "../Models/Courses.js";
 import stripe from "stripe";
 
 const verify = jwt.verify;
-const populate = Populate;
-
+const privatekey = process.env.privatekey;
+const createToken = CreateToken.createToken;
 const Stripe = stripe;
 Stripe(
   "pk_test_51Kx8yQSDHXvbXGt6F13O8DSRoMRGh3RIRowSAWZWQufnbROege73n3svBo4nakJmkmwjrZc0UIumLpAEvNEZZbnY00WEAcLtWL"
 );
 
-const menteeApiController = {
+export default {
   signUp: catchAsync(async (req, res, next) => {
-    const newMentor = await Mentee.create({ ...req.body });
-    createToken(newMentor);
-    await newMentor.save();
+    const newMentee = await Mentee.create({ ...req.body });
+    createToken(newMentee);
+    await newMentee.save();
     res.status(200).json({
-      status: "success",
-      user: "Mentee",
-      message: "registered successfully",
-      data: newMentor
+      status: "Success",
+      user: "mentee",
+      message: "Registered Successfully",
+      data: newMentee
     });
   }),
 
@@ -36,7 +36,7 @@ const menteeApiController = {
     createToken(foundUser);
     foundUser.save();
     res.status(200).json({
-      status: "success",
+      status: "Success",
       user: "Mentee",
       message: "LoggedIn successfully",
       data: foundUser
@@ -80,7 +80,7 @@ const menteeApiController = {
 
   buyCourse: catchAsync(async (req, res, next) => {
     const accessToken = req.headers.authorization;
-    const MenteeId = await verify(accessToken, privateKey);
+    const MenteeId = await verify(accessToken, privatekey);
     const courseId = req.params.courseId;
 
     const { amount, source, receipt_email } = req.body;
@@ -118,7 +118,7 @@ const menteeApiController = {
 
   getUserData: catchAsync(async (req, res, next) => {
     const accessToken = req.headers.authorization;
-    const userId = await verify(accessToken, privateKey);
+    const userId = await verify(accessToken, privatekey);
     if (userId == null || userId == undefined) {
       return next(new AppError("token expired", 400));
     }
@@ -145,5 +145,3 @@ const menteeApiController = {
     }
   })
 };
-
-export default menteeApiController;
