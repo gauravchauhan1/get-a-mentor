@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import DomainHeader from "../../Components/DomainHeader";
 import { fetchCourses } from "../../Redux/courses";
 import { domainSpecificCourses } from "../../Redux/courses";
 import DomainSpecificCourses from "./DomainSpecificCourses";
@@ -17,6 +18,7 @@ const Courses = () => {
 
   return (
     <div>
+      <DomainHeader />
       <DomainSpecificCourses />
     </div>
   );

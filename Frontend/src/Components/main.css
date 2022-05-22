@@ -8,12 +8,23 @@
 }
         
 .main-container .left-content{
-    margin-right: 120px;
+    padding-left:5rem;
+    margin-right: 8rem;
         width: 742px;
+        font-weight: 400;
+        
 }
 .main-container .right-content{
         background: url(/src/assets/images/main-container-image.jpg) no-repeat;
             height: 482px;
             width: 360px;
 
+}
+
+.green-content{
+    color: #429E9D
+}
+.typed-content{
+    color:lightcoral;
+    font-weight: 500;
 }

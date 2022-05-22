@@ -1,15 +1,16 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const getAllCourses = createApi({
-  reducerPath: 'getAllCourses',
+  reducerPath: "getAllCourses",
   baseQuery: fetchBaseQuery({
-    baseUrl: `http://localhost:${process.env.REACT_APP_BACKEND_PORT}/getallCourses`
+    baseUrl: `http://localhost:${process.env.REACT_APP_BACKEND_PORT}/getallCourses`,
   }),
   endpoints: (builder) => ({
     getJokeByType: builder.query({
-      query: (type) => `${type}/random`
-    })
-  })
-})
+      query: (type) => `${type}/random`,
+    }),
+  }),
+});
 
-export const { useGetJokeByTypeQuery } = getAllCourses
+export const { useGetJokeByTypeQuery } = getAllCourses;
+// currently not working
