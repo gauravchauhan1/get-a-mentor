@@ -10,6 +10,7 @@ const Landing = () => {
     <div>
       <Main />
       <HeroSection />
+      <Footer />
     </div>
   );
 };
