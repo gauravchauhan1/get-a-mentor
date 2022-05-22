@@ -1,18 +1,18 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 export const domainSlice = createSlice({
-  name: 'domain',
+  name: "domain",
   initialState: {
-    selectedDomain: 'temp'
+    selectedDomain: "temp",
   },
   reducers: {
     domainSelect: (state, action) => {
-      state.selectedDomain = action.payload
-    }
-  }
-})
+      state.selectedDomain = action.payload;
+    },
+  },
+});
 
 // Action creators are generated for each case reducer function
-export const { domainSelect } = domainSlice.actions
+export const { domainSelect } = domainSlice.actions;
 
-export default domainSlice.reducer
+export default domainSlice.reducer;

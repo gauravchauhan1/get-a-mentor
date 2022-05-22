@@ -19,7 +19,6 @@ const HeroSection = () => {
       <div className="hero-right">
         <div className="hero-image"></div>
       </div>
-
     </div>
   );
 };
