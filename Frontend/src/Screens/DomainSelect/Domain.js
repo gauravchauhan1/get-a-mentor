@@ -18,7 +18,7 @@ const Domain = (props) => {
   ];
   return (
     <>
-      <DomainHeader />
+      <DomainHeader domain={domains} />
       <div className="domain-container">
         {domains.map((domain, index) => {
           return <Subdomain domain={domain} key={index} />;

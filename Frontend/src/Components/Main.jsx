@@ -14,7 +14,11 @@ const Main = () => {
         <h1>
           <span className="typed-content ">
             <Typed
-              strings={["Programs and Courses"]}
+              strings={[
+                "Programs & Courses",
+                "Live Mentoring",
+                "Online Courses",
+              ]}
               typeSpeed={40}
               startDelay={500}
               loop={true}
@@ -24,7 +28,7 @@ const Main = () => {
           </span>
         </h1>
       </div>
-      <div className="right-content">zvcXz</div>
+      <div className="right-content"></div>
     </section>
   );
 };

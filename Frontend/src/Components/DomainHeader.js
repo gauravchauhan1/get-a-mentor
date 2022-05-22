@@ -1,6 +1,8 @@
 import React from "react";
 import "../Styles/domain.css";
-const DomainHeader = ({ domain }) => {
+const DomainHeader = (props) => {
+  console.log(props.domain);
+
   return (
     <div className="domain-header">
       <h1>Program and courses</h1>

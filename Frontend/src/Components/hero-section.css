@@ -25,11 +25,11 @@
     line-height: 4rem;
 }
 .header-content{
-
+font-weight: 400;
 }
 .hero-image{
     height: 100%;
-        background-image: url('../assets/images/hero-img.jpg');
+        background-image: url('../assets/images/hero.png');
         background-repeat: no-repeat;
         background-size: 100% 100%;
     border-radius: 0.5rem;

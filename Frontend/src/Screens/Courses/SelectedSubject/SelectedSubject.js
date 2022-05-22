@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import "../../../Styles/subject.css";
-import logo from "../../../assets/images/IT_logo.png";
+import logo from "../../../assets/images/course.jpg";
 import { Button } from "bootstrap";
 const SelectedSubject = () => {
   const selectedSubject = useSelector((state) => state.courses.selectedSubject);
@@ -45,6 +45,12 @@ const SelectedSubject = () => {
               <li className="card-text">Learn from Industry Experts</li>
               <li className="card-text">Upskill for Career Growth</li>
               <li className="card-text">Community Support</li>
+            </ul>
+            <ul class="list-group list-group-flush">
+              <li className="list-group-item"></li>
+              <li className="list-group-item">
+                Price : <i class="fa fa-inr"></i> {selectedSubject.price}
+              </li>
             </ul>
             <button className="btn btn-primary w-100">Enroll now.</button>
           </div>
