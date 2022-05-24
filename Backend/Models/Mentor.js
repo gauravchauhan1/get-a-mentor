@@ -1,20 +1,33 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
-import Validator from "validator";
+import validator from "validator";
 
 const Schema = mongoose.Schema;
 const model = mongoose.model;
 const hash = bcrypt.hash;
 const compare = bcrypt.compare;
-const validator = Validator.validator;
+
 
 const userSchema = new Schema(
   {
-    name: {
+    firstName: {
       type: String,
       required: true,
       trim: true,
       minlength: 3
+    },
+    lastName: {
+      type: String,
+      required: false,
+      trim: true,
+      minlength: 3
+    },
+    userName: {
+      type: String,
+      required: true,
+      trim: true,
+      minlength: 3,
+      unique: true
     },
     email: {
       type: String,
@@ -36,6 +49,24 @@ const userSchema = new Schema(
       trim: true,
       minlength: 8
     },
+    domain: {
+      type: String,
+      required: false,
+      trim: true,
+      enum: [ null,
+              "IT" ,
+              "Fashion Design" ,
+              "Marketing" ,
+              "Finance" ,
+              "Healthcare" ,
+              "Education" ,
+              "Sports" ,
+              "Entertainment" ,
+              "Food" ,
+              "Travel"
+            ],
+      default: null
+    },
     isThirdPartyUser: {
       type: Boolean,
       required: false,
@@ -55,11 +86,12 @@ const userSchema = new Schema(
       required: false
     },
     image: {
-      type: String,
+      type: Buffer,
+      contentType: String,
       required: false
     },
     DOB: {
-      type: Date,
+      type: Date || null,
       validate: {
         validator: data => {
           return data.toLocaleDateString();
@@ -67,7 +99,7 @@ const userSchema = new Schema(
         message: props => `${props.value} is not a valid date format`
       },
       required: false,
-      default: new Date().toLocaleDateString()
+      default: null //new Date().toLocaleDateString()
     },
     gender: {
       type: String,
