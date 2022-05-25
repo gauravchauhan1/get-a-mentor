@@ -17,7 +17,7 @@ Stripe(
 );
 
 export default {
-  signUp: catchAsync(async (req, res, next) => {
+  signUp: catchAsync(async (req, res, next) => { 
     const newMentee = await Mentee.create({ ...req.body });
     createToken(newMentee);
     await newMentee.save();

@@ -9,11 +9,24 @@ const compare = bcrypt.compare;
 
 const userSchema = new Schema(
   {
-    name: {
+    firstName: {
       type: String,
       required: true,
       trim: true,
       minlength: 3
+    },
+    lastName: {
+      type: String,
+      required: false,
+      trim: true,
+      minlength: 3
+    },
+    userName: {
+      type: String,
+      required: true,
+      trim: true,
+      minlength: 3,
+      unique: true
     },
     email: {
       type: String,

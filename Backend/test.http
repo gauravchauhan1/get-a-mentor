@@ -1,10 +1,51 @@
 POST http://localhost:3000/mentor/signUp
 content-type: application/json
 
+# {
+#         "firstName": "Gaurav",
+#         "lastName": "Chauhan",
+#         "userName": "gaurav90",
+#         "email": "gaurav09@gmail.com",
+#         "password": "12345@ashish",
+#         "DOB": "12/12/1998",
+#         "domain": "IT"
+# }
+# {
+#         "firstName": "Ankita",
+#         "lastName": "Sharma",
+#         "userName": "ankita442",
+#         "email": "ankita455@gmail.com",
+#         "password" : "dingding123#",
+#         "DOB": "12/12/1998",
+#         "domain": "IT"  
+# }
+
 {
-        "name": "Gaurav",
-        "email": "gaurav09@gmail.com",
-        "password": "12345@ashish",
-        "DOB": "12/12/1998",
-        "domain": "IT"
+        "firstName": "Abhishek",
+        "lastName": "Patel",
+        "userName": "abhi987",
+        "email": "abhishek97@gmail.com",
+        "password": "abhishek8923^$%$",
+        
+        "domain": "Education"
 }
+
+# {
+#         "firstName": "Raj",
+#         "lastName": "Kumar",
+#         "userName": "raj121",
+#         "email": "rajkumar@gmail.com",
+#         "password": "raj12345",
+#         "DOB": "12/12/1998",
+#         "domain": "IT"
+# }
+# {
+#         "firstName": "Dhruv",
+#         "lastName": "Taneja",
+#         "userName": "dhruv123",
+#         "email": "dhurvyagi756@gmail.com",
+#         "password": "dhruv12345",
+#         "DOB": "12/02/2004",
+#         "domain": "Healthcare"
+# }]
+
