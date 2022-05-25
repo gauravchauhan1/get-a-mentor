@@ -58,7 +58,7 @@ const userSchema = new Schema(
       required: false
     },
     DOB: {
-      type: Date,
+      type: Date || null,
       required: false,
       validate: {
         validator: data => {

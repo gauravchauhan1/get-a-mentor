@@ -1,5 +1,5 @@
 import React from "react";
-import "./main.css";
+import "../Styles/main.css";
 import Typed from "react-typed";
 const Main = () => {
   return (

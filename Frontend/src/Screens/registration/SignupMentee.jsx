@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useAuth } from "../../contexts/AuthContext";
-import "./signup-mentee.css";
+import "../Styles/signup-mentee.css";
 const SignupMentee = () => {
   const { signup } = useAuth();
   const [confirmPassError, setConfirmPassError] = useState(false);

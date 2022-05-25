@@ -16,7 +16,17 @@ const coursesSchema = new Schema({
   },
   category: {
     type: String,
-    enum: ["Cooking", "Coding", "Finance"],
+    enum: [ { name: "IT" },
+            { name: "Fashion Design" },
+            { name: "Marketing" },
+            { name: "Finance" },
+            { name: "Healthcare" },
+            { name: "Education" },
+            { name: "Sports" },
+            { name: "Entertainment" },
+            { name: "Food" },
+            { name: "Travel" }
+          ],
     required: true
   },
   price: {
