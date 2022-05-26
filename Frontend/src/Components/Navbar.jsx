@@ -22,15 +22,21 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarText">
             <ul className="navbar-nav mx-auto">
               <li className="nav-item">
+                <Link to="/mentors" className="nav-link">
+                  Mentor-Select
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link to="/" className="nav-link">
                   Home
                 </Link>
               </li>
               <li className="nav-item">
                 <Link to="/domain" className="nav-link">
-                  Domain Select
+                  Domain-Select
                 </Link>
               </li>
+              
             </ul>
             <Link to="/login">
               <button

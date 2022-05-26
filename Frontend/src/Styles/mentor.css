@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600&display=swap');
+
+.mentor.card-img-top{
+    height:144px;
+    width:144px;
+    margin:auto auto 16px;
+    padding-top:1rem;
+}
+
+.mentor.card-container{
+    margin:1rem;
+    box-shadow: 0px 4px 8px #f1f2f4;
+    font-family: manrope;
+    
+}
+.mentor.card-title{
+    font-size: 20px;
+    margin:0rem;
+}
+.mentor.domain{
+    font-size: 12px;
+    margin:1px 0 0 0;
+}
+
+.mentor .card-description{
+    margin-top:1rem;
+    font-size: 12px;
+    margin-bottom: 0;
+    
+}
+.mentor.description-child p{
+    margin-left:0.5rem;
+    color:#189AB4
+}

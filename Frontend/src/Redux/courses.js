@@ -10,7 +10,7 @@ const initialState = {
 };
 export const fetchCourses = createAsyncThunk("courses/fetchCourses", () => {
   return axios
-    .get("http://localhost:7000/getallCourses")
+    .get(`http://localhost:${process.env.REACT_APP_BACKEND_PORT}/getallCourses`)
     .then((response) => response.data);
 });
 
