@@ -7,28 +7,33 @@ content-type: application/json
 #         "userName": "gaurav90",
 #         "email": "gaurav09@gmail.com",
 #         "password": "12345@ashish",
-#         "DOB": "12/12/1998",
-#         "domain": "IT"
+#         "domain": "IT",
+#         "revenue": "650/hr",
+#         "aboutMentor": "Analytics professional with a demonstrated history of working in the management consulting and mining industry. Having over 5 years of work experience in the Mining & Metals industry with a spike in following areas of: 1. Operational performance management 2. Cost optimization 3. Digital transformation 4. Due diligence 5. Techno-Economic studies 6. Strategic marketing 7. Product management 8. Team management With excellent domain knowledge, brings in skills of Financial Modelling, Market Research, Data Analytics Simulation and Advance analytics. Published Papers, attended workshops & conferences and an active participant in extra co-curricular activities."
 # }
+
 # {
 #         "firstName": "Ankita",
 #         "lastName": "Sharma",
 #         "userName": "ankita442",
 #         "email": "ankita455@gmail.com",
 #         "password" : "dingding123#",
-#         "DOB": "12/12/1998",
-#         "domain": "IT"  
+#         "domain": "IT",
+#         "revenue": "1000/hr",
+#         "designation": "Software Engineer",
+#         "aboutMentor": "I am currently working as an experienced software engineer. Previously I have worked at big tech companies like amazon and Swiggy as software engineer. I have more than 7 years of experience in coding, and teaching/mentoring students."  
 # }
 
-{
-        "firstName": "Abhishek",
-        "lastName": "Patel",
-        "userName": "abhi987",
-        "email": "abhishek97@gmail.com",
-        "password": "abhishek8923^$%$",
-        
-        "domain": "Education"
-}
+# {
+#         "firstName": "Abhishek",
+#         "lastName": "Patel",
+#         "userName": "abhi987",
+#         "email": "abhishek97@gmail.com",
+#         "password": "abhishek8923^$%$",
+#         "domain": "Education",
+#         "revenue": "1000/hr",
+#         "aboutMentor": "Associate Data Analyst/ABA professional with proven skills creating customer value in a solutions business; 4.8+ years of experience in building and implementing customer facing, production-ready, scalable solutions; passionate about delivering value to businesses through data science and analytics."
+# }
 
 # {
 #         "firstName": "Raj",
@@ -36,16 +41,19 @@ content-type: application/json
 #         "userName": "raj121",
 #         "email": "rajkumar@gmail.com",
 #         "password": "raj12345",
-#         "DOB": "12/12/1998",
-#         "domain": "IT"
+#         "domain": "IT",
+#         "revenue": "700/hr",
+#         "aboutMentor": "Front-end Engineer at Nvidia with extensive mentorship and teaching experience at Board Infinity and Great Lakes Institute of Technology. I have a strong background in web development and have worked on multiple projects in the past. I am a self-starter and a team player. I am a fast learner and a great team player."
 # }
+
 # {
 #         "firstName": "Dhruv",
 #         "lastName": "Taneja",
 #         "userName": "dhruv123",
 #         "email": "dhurvyagi756@gmail.com",
 #         "password": "dhruv12345",
-#         "DOB": "12/02/2004",
-#         "domain": "Healthcare"
-# }]
+#         "domain": "Healthcare",
+#         "revenue": "850/hr",
+#         "aboutMentor": "I am a Data Analyst with a demonstrated history of working in the healthcare industry. I have worked with clients from multiple industries. I have a Bachelor of Science degree in Computer Science from the University of Illinois at Urbana-Champaign. I have worked on multiple projects in the past. I am a self-starter and a team player. I am a fast learner and a great team player."
+# }
 

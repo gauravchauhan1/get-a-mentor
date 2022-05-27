@@ -14,20 +14,20 @@ const userSchema = new Schema(
       type: String,
       required: true,
       trim: true,
-      minlength: 3
+      minlength: 3,
     },
     lastName: {
       type: String,
       required: false,
       trim: true,
-      minlength: 3
+      minlength: 3,
     },
     userName: {
       type: String,
       required: true,
       trim: true,
       minlength: 3,
-      unique: true
+      unique: true,
     },
     email: {
       type: String,
@@ -35,11 +35,11 @@ const userSchema = new Schema(
       trim: true,
       unique: true,
       validate: {
-        validator: data => {
+        validator: (data) => {
           return validator.isEmail(data);
         },
-        message: props => `${props.value} is not a valid mail id `
-      }
+        message: (props) => `${props.value} is not a valid mail id `,
+      },
     },
     password: {
       type: String,
@@ -47,85 +47,86 @@ const userSchema = new Schema(
         return !this.isThirdPartyUser;
       },
       trim: true,
-      minlength: 8
+      minlength: 8,
     },
     domain: {
       type: String,
       required: false,
       trim: true,
-      enum: [ null,
-              "IT" ,
-              "Fashion Design" ,
-              "Marketing" ,
-              "Finance" ,
-              "Healthcare" ,
-              "Education" ,
-              "Sports" ,
-              "Entertainment" ,
-              "Food" ,
-              "Travel"
-            ],
-      default: null
+      enum: [
+        null,
+        "IT",
+        "Fashion Design",
+        "Marketing",
+        "Finance",
+        "Healthcare",
+        "Education",
+        "Sports",
+        "Entertainment",
+        "Food",
+        "Travel",
+      ],
+      default: null,
     },
     isThirdPartyUser: {
       type: Boolean,
       required: false,
-      default: false
+      default: false,
     },
     accessToken: {
       type: String,
-      required: false
+      required: false,
     },
     tempToken: {
       type: String,
-      required: false
+      required: false,
     },
     verified: {
       type: Boolean,
       default: false,
-      required: false
+      required: false,
     },
     image: {
       type: Buffer,
       contentType: String,
-      required: false
+      required: false,
     },
     DOB: {
-      type: Date || null,
+      type: Date,
       validate: {
-        validator: data => {
+        validator: (data) => {
           return data.toLocaleDateString();
         },
-        message: props => `${props.value} is not a valid date format`
+        message: (props) => `${props.value} is not a valid date format`,
       },
       required: false,
-      default: null //new Date().toLocaleDateString()
+      default: undefined, //new Date().toLocaleDateString()
     },
     gender: {
       type: String,
       default: "male",
-      enum: ["male", "female", "other"]
+      enum: ["male", "female", "other"],
     },
     Address: {
       city: {
         type: String,
-        default: " "
+        default: " ",
       },
       district: {
         type: String,
-        default: " "
+        default: " ",
       },
       state: {
         type: String,
-        default: " "
+        default: " ",
       },
       pincode: {
         type: Number,
-        default: " "
-      }
+        default: " ",
+      },
     },
     phoneNumber: {
-      type: Number
+      type: Number,
     },
     // videos : {
     //     type : Schema.Types.ObjectId,
@@ -134,13 +135,18 @@ const userSchema = new Schema(
     courses: [
       {
         type: Schema.Types.ObjectId,
-        ref: "course"
-      }
+        ref: "course",
+      },
     ],
     revenue: {
-      type: Number,
-      required: false
-    }
+      type: String,
+      required: false,
+    },
+    aboutMentor: {
+      type: String,
+      required: false,
+      trim: true,
+    },
   },
   { timestamps: true }
 );
