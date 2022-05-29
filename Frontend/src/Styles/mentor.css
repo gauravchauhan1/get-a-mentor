@@ -11,6 +11,7 @@
     margin:1rem;
     box-shadow: 0px 4px 8px #f1f2f4;
     font-family: manrope;
+    transition: transform .4s;
     
 }
 .mentor.card-title{
@@ -31,4 +32,8 @@
 .mentor.description-child p{
     margin-left:0.5rem;
     color:#189AB4
+}
+
+.mentor.card-container:hover{
+    transform: scale(1.1);
 }

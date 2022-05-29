@@ -24,6 +24,14 @@ const Mentor = ({ mentor }) => {
                 <i class="fa fa-light fa fa-graduation-cap"></i>
                 <p>Consulting</p>
               </div>
+              <div className="d-flex flex-row ">
+                <i class="fa fa-regular fa fa-people-group"></i>
+                <p>Students,Freshers</p>
+              </div>
+              <div className="d-flex flex-row mentor description-child">
+                <i class="fa fa-regular fa fa-lines-leaning"></i>
+                <p>{mentor.domain}</p>
+              </div>
             </div>
           </div>
         </div>
