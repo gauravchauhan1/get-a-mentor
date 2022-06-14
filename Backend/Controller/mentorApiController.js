@@ -54,7 +54,13 @@ const mentorApiController = {
 
   getAllMentors: async (req, res, next) => {
     const mentors = await Mentor.find({}).select({
-      firstName:1,lastName:1,domain:1,image:1,Address:0,email:0,phoneNumber:0,state:0,pincode:0,revenue:1,courses:0,_id:0});
+      firstName:1,
+      lastName:1,
+      domain:1,
+      image:1,
+      revenue:1,
+      aboutMentor:1
+    });
     res.status(200).json({
       status: "Success",
       user: "Mentor",

@@ -13,7 +13,7 @@ const MentorToken = Authentication.mentorToken;
 const getAllMentors = mentorApiController.getAllMentors;
 
 router.post("/mentor/signUp", signUp);
-router.get("/mentor/getall", getAllMentors);
+router.get("/mentor", getAllMentors);
 router.post("/mentor/signIn", signIn);
 router.delete("/mentor/signOut", MentorToken, signOut);
 router.post("/createCourse", MentorToken, createCourse);

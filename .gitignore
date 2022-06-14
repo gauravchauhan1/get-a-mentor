@@ -128,3 +128,7 @@ yarn-debug.log*
 yarn-error.log*
 
 *.vscode
+
+*mentor_data.json
+
+*.http
