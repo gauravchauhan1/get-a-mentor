@@ -1,8 +1,0 @@
-POST http://localhost:3000/mentor/signIn
-content-type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOTEwNTc1YzZkZDdjNzMxZjM1MGQ3NSIsImlhdCI6MTY1MzY3MTI4NSwiZXhwIjoxNjUzNzU3Njg1fQ._-3QzSLP-Z1ayWIhjPNs7EchHr0pCIlVg6UHtIbtjwc
-
-{
-    "email": "abhishek97@gmail.com",
-    "password": "abhishek8923^$%$"
-}

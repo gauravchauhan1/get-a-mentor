@@ -130,3 +130,5 @@ yarn-error.log*
 *.vscode
 
 *mentor_data.json
+
+*.http
