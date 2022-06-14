@@ -1,9 +1,8 @@
 POST http://localhost:3000/mentor/signIn
 content-type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODkwOWJiN2YyMGYwYWRjZDZiZTk4MSIsImlhdCI6MTY1MzE0ODA5MSwiZXhwIjoxNjUzMjM0NDkxfQ.JOjHGLG6fvOkIJf1Wj5TkPntBVBG-WERBhDKRx9QgrY
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOTEwNTc1YzZkZDdjNzMxZjM1MGQ3NSIsImlhdCI6MTY1MzY3MTI4NSwiZXhwIjoxNjUzNzU3Njg1fQ._-3QzSLP-Z1ayWIhjPNs7EchHr0pCIlVg6UHtIbtjwc
 
 {
-    "email": "ankit09@gmail.com",
-    "password": "12345@ashish",
-    "DOB": "12/12/1998"
+    "email": "abhishek97@gmail.com",
+    "password": "abhishek8923^$%$"
 }
